@@ -1,0 +1,61 @@
+
+p {
+    color: #007BFF;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    padding: 16px;
+    background-color: #f9f9f9;
+  }
+  
+
+#search-results {
+  margin-top: 20px;
+}
+
+.search-result-item {
+  background-color: #ffffff; 
+  border: 1px solid #d3d3d3; 
+  border-radius: 8px; 
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); 
+  padding: 15px; 
+  margin-bottom: 15px; 
+}
+
+
+.flight-box {
+  border: 1px solid #211e1e;
+  background-color: aliceblue;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  height: 150px;
+}
+
+
+.flight-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+
+.flight-detail {
+  margin: 0;
+}
+
+
+.flight-price {
+  font-weight: bold;
+  color: #007bff; 
+}
+  
