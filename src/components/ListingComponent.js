@@ -1,37 +1,40 @@
-/*jshint esversion: 8 */
 import React from 'react';
 import './ListingComponent.css';
+import FlightItem from './FlightItem';
 
-const ListingComponent = ({ flights, loading }) => {
-  /* jshint ignore:start */
+const ListingComponent = ({ departureFlights, returnFlights }) => {
   return (
-    <div>
-      
-      
-      {!loading && flights.length > 0 && (
+    <div className="container mt-4">
+      {departureFlights.length > 0 && (
         <div>
-          <ul>
-        {flights.map((flight) => (
-      <div key={flight.id} className="flight-box">
-        <div className="flight-info">
-          <p className="flight-detail">Airline: {flight.airline}</p>
-          <p className="flight-detail">City: {flight.city}</p>
+          <h3>Departure Flights:</h3>
+
+          <ul className="list-unstyled">
+            {departureFlights.map((flight) => (
+              <FlightItem key={flight.id} flight={flight} />
+            ))}
+          </ul>
         </div>
-        <div className="flight-info">
-          <p className="flight-detail">Departure: {flight.departureDate}</p>
-          <p className="flight-detail">Arrival: {flight.returnDate}</p>
+      )}
+
+      {returnFlights.length > 0 && (
+        <div>
+          <h3>Return Flights:</h3>
+
+          <ul className="list-unstyled">
+            {returnFlights.map((flight) => (
+
+              <FlightItem key={flight.id} flight={flight} />
+            ))}
+          </ul>
         </div>
-        <div className="flight-info">
-          <p className="flight-price">Price: {flight.price}</p>
-        </div>
-      </div>
-    ))}
-        </ul>
-        </div>
+      )}
+
+      {departureFlights.length === 0 && returnFlights.length === 0 && (
+        <p>No flights found for the selected criteria.</p>
       )}
     </div>
   );
-  /* jshint ignore:end */
 };
 
 export default ListingComponent;
